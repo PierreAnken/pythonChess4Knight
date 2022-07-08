@@ -37,7 +37,6 @@ def get_knight_positions(current_board):
 
 
 def get_possible_moves(current_board):
-    # only positions we don't care about color
     knights_moves = []
     for knight in get_knight_positions(current_board):
         knight_x, knight_y, color = knight
@@ -107,7 +106,7 @@ def explore_positions_recursive(current_board: tuple, tested_positions: [], move
     # mark the position as tested
     tested_positions.append((level, board_code))
 
-    # we try all the moved from current position
+    # we try all the moves from current position
     possible_moves = get_possible_moves(current_board)
     random.shuffle(possible_moves)
     print(f'Possible moves: {len(possible_moves)}\n')
